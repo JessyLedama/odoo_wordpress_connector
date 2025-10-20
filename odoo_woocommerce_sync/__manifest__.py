@@ -11,6 +11,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/woo_sync_views.xml',
+        'views/update_bookings_views.xml',
         'data/woo_sync_cron.xml',
     ],
     'installable': True,

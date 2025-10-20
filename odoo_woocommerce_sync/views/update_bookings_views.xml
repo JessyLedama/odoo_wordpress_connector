@@ -1,0 +1,53 @@
+<odoo>
+    <record id="update_bookings_views_form" model="ir.ui.view">
+        <field name="name">update.bookings</field>
+        <field name="model">update.bookings</field>
+        <field name="arch" type="xml">
+            <form string="Update Bookings">
+                <header>
+                        <button name="update_bookings" string="Update Bookigs"
+                                type="object" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="consumer_key"/>
+                        <field name="consumer_secret"/>
+                        <field name="url"/>
+                    </group>
+
+                    <group>
+                        <field name="last_sync_date" string="Last Sync Date" readonly="1"/>
+                        <field name="last_sync_status" string="Last Sync Log" widget="text" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="update_bookings_views_tree" model="ir.ui.view">
+        <field name="name">update.bookings.list</field>
+        <field name="model">update.bookings</field>
+        <field name="arch" type="xml">
+            <list string="Update Bookings">
+                <header>
+                        <button name="update_bookings" string="Update Bookigs"
+                                type="object" class="btn-primary"/>
+                </header>
+
+                <field name="name"/>
+                <field name="consumer_key"/>
+                <field name="consumer_secret"/>
+                <field name="url"/>
+                <field name="last_sync_date"/>
+                <field name="last_sync_status"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_update_bookings" model="ir.actions.act_window">
+        <field name="name">Update Bookings</field>
+        <field name="res_model">update.bookings</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

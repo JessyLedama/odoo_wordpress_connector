@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_woo_sync,access_woo_sync,model_woo_sync,,1,1,1,1
+access_update_bookings_user,access_update_bookings_user,model_update_bookings,,1,1,1,1

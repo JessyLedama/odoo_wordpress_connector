@@ -1,0 +1,10 @@
+<odoo>
+    <!-- Root menu -->
+    <menuitem id="menu_woo_sync_root" name="Woo Sync" sequence="10"/>
+
+    <!-- Woo Sync dashboard menu -->
+    <menuitem id="menu_woo_sync" name="Sync Dashboard" parent="menu_woo_sync_root" action="action_woo_sync" sequence="10"/>
+
+    <!-- Update Bookings menu -->
+    <menuitem id="menu_update_bookings" name="Update Bookings" parent="menu_woo_sync_root" action="action_update_bookings" sequence="20"/>
+</odoo>

@@ -1,0 +1,12 @@
+<odoo>
+    <record id="ir_cron_woo_sync" model="ir.cron">
+        <field name="name">WooCommerce Order Sync</field>
+        <field name="model_id" ref="model_woo_sync"/>
+        <field name="state">code</field>
+        <field name="code">model.search([], limit=1).action_fetch_orders()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">hours</field>
+        <field name="active">True</field>
+        <field name="nextcall">2025-10-19 00:00:00</field>
+    </record>
+</odoo>

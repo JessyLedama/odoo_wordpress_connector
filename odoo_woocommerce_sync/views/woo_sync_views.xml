@@ -1,0 +1,62 @@
+<odoo>
+    <record id="view_woo_sync_form" model="ir.ui.view">
+        <field name="name">woo.sync.form</field>
+        <field name="model">woo.sync</field>
+        <field name="arch" type="xml">
+            <form string="Woo Sync">
+                <header>
+                        <button name="action_fetch_orders" string="Fetch WooCommerce Orders"
+                                type="object" class="btn-primary"/>
+
+                        <button name="action_post_order_to_woo" string="Post Orders To WooCommerce"
+                                type="object" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="consumer_key"/>
+                        <field name="consumer_secret"/>
+                        <field name="url"/>
+                    </group>
+
+                    <group>
+                        <field name="last_sync_date" string="Last Sync Date" readonly="1"/>
+                        <field name="last_sync_status" string="Last Sync Log" widget="text" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_woo_sync_tree" model="ir.ui.view">
+        <field name="name">woo.sync.list</field>
+        <field name="model">woo.sync</field>
+        <field name="arch" type="xml">
+            <list string="Woo Sync">
+                <header>
+                        <button name="action_fetch_orders" string="Fetch WooCommerce Orders"
+                                type="object" class="btn-primary"/>
+
+                        <button name="action_post_order_to_woo" string="Post Orders To WooCommerce"
+                                type="object" class="btn-primary"/>
+                </header>
+
+                <field name="name"/>
+                <field name="consumer_key"/>
+                <field name="consumer_secret"/>
+                <field name="url"/>
+                <field name="last_sync_date"/>
+                <field name="last_sync_status"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_woo_sync" model="ir.actions.act_window">
+        <field name="name">Woo Sync</field>
+        <field name="res_model">woo.sync</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_woo_sync_root" name="Woo Sync" sequence="10"/>
+    <menuitem id="menu_woo_sync" name="Sync Dashboard" parent="menu_woo_sync_root" action="action_woo_sync"/>
+</odoo>
